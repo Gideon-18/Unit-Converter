@@ -11,6 +11,15 @@ It allows users to easily convert between various units — including **temperat
 
 ---
 
+## 📚 Project Reference
+
+This project is inspired by the **Unit Converter** challenge on [roadmap.sh](https://roadmap.sh/projects/unit-converter).  
+It follows the outlined requirements to build a backend-powered converter for multiple unit types.
+
+🔗 **Project Page:** [https://roadmap.sh/projects/unit-converter](https://roadmap.sh/projects/unit-converter)
+
+---
+
 ## 🚀 Features
 
 - 🔁 Convert between multiple unit types:
