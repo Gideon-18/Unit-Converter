@@ -1,0 +1,10 @@
+[
+  {
+    "type": "temperature",
+    "from": "c",
+    "to": "f",
+    "value": 37,
+    "result": 98.6,
+    "timestamp": "2025-11-03T13:09:05.644Z"
+  }
+]

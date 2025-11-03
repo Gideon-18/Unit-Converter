@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Converter</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Unit Converter</h2>
+
+    <select id="type">
+      <option value="temperature">Temperature</option>
+      <option value="length">Length</option>
+      <option value="weight">Weight</option>
+    </select>
+
+    <input type="number" id="value" placeholder="Enter value" />
+
+    <select id="from"></select>
+    <select id="to"></select>
+
+    <button id="convertBtn">Convert</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const units = {
+      temperature: ["Celsius (c)", "Fahrenheit (f)", "Kelvin (k)"],
+      length: ["Millimeter (mm)", "Centimeter (cm)", "Meter (m)", "Kilometer (km)", "Inch (in)", "Foot (ft)", "Yard (yd)", "Mile (mi)"],
+      weight: ["Milligram (mg)", "Gram (g)", "Kilogram (kg)", "Ounce (oz)", "Pound (lb)"]
+    };
+
+    const typeSelect = document.getElementById("type");
+    const fromSelect = document.getElementById("from");
+    const toSelect = document.getElementById("to");
+    const valueInput = document.getElementById("value");
+    const resultDiv = document.getElementById("result");
+
+    // Update dropdowns based on selected type
+    function updateUnitOptions() {
+      const selectedType = typeSelect.value;
+      const availableUnits = units[selectedType];
+
+      fromSelect.innerHTML = "";
+      toSelect.innerHTML = "";
+
+      availableUnits.forEach(unit => {
+        const value = unit.match(/\((.*?)\)/)[1]; // get text in parentheses
+        fromSelect.innerHTML += `<option value="${value}">${unit}</option>`;
+        toSelect.innerHTML += `<option value="${value}">${unit}</option>`;
+      });
+    }
+
+    typeSelect.addEventListener("change", updateUnitOptions);
+    updateUnitOptions(); // initialize on page load
+
+    document.getElementById("convertBtn").addEventListener("click", async () => {
+      const type = typeSelect.value;
+      const from = fromSelect.value;
+      const to = toSelect.value;
+      const value = parseFloat(valueInput.value);
+
+      const response = await fetch("/convert", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type, from, to, value })
+      });
+
+      const data = await response.json();
+      if (data.result !== undefined) {
+        resultDiv.innerText = `Result: ${data.result.toFixed(2)}`;
+      } else {
+        resultDiv.innerText = "Error: " + data.error;
+      }
+    });
+  </script>
+</body>
+</html>

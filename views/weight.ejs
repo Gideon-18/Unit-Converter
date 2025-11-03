@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Weight Converter</title>
+  </head>
+  <body>
+    <h1>Weight Converter</h1>
+
+    <form method="POST" action="/weight">
+      <input type="number" step="any" name="value" placeholder="Enter value" required value="<%= input || '' %>">
+
+      <select name="from" required>
+        <option value="milligram" <%= from === 'milligram' ? 'selected' : '' %>>Milligram</option>
+        <option value="gram" <%= from === 'gram' ? 'selected' : '' %>>Gram</option>
+        <option value="kilogram" <%= from === 'kilogram' ? 'selected' : '' %>>Kilogram</option>
+        <option value="ounce" <%= from === 'ounce' ? 'selected' : '' %>>Ounce</option>
+        <option value="pound" <%= from === 'pound' ? 'selected' : '' %>>Pound</option>
+      </select>
+
+      <span>to</span>
+
+      <select name="to" required>
+        <option value="milligram" <%= to === 'milligram' ? 'selected' : '' %>>Milligram</option>
+        <option value="gram" <%= to === 'gram' ? 'selected' : '' %>>Gram</option>
+        <option value="kilogram" <%= to === 'kilogram' ? 'selected' : '' %>>Kilogram</option>
+        <option value="ounce" <%= to === 'ounce' ? 'selected' : '' %>>Ounce</option>
+        <option value="pound" <%= to === 'pound' ? 'selected' : '' %>>Pound</option>
+      </select>
+
+      <button type="submit">Convert</button>
+    </form>
+
+    <% if (result !== null) { %>
+      <h2><%= result %></h2>
+    <% } %>
+  </body>
+</html>

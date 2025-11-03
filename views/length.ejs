@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Length Converter</title>
+  </head>
+  <body>
+    <h1>Length Converter</h1>
+
+    <form method="POST" action="/length">
+      <input type="number" step="any" name="value" placeholder="Enter value" required value="<%= input || '' %>">
+
+      <select name="from" required>
+        <option value="millimeter" <%= from === 'millimeter' ? 'selected' : '' %>>Millimeter</option>
+        <option value="centimeter" <%= from === 'centimeter' ? 'selected' : '' %>>Centimeter</option>
+        <option value="meter" <%= from === 'meter' ? 'selected' : '' %>>Meter</option>
+        <option value="kilometer" <%= from === 'kilometer' ? 'selected' : '' %>>Kilometer</option>
+        <option value="inch" <%= from === 'inch' ? 'selected' : '' %>>Inch</option>
+        <option value="foot" <%= from === 'foot' ? 'selected' : '' %>>Foot</option>
+        <option value="yard" <%= from === 'yard' ? 'selected' : '' %>>Yard</option>
+        <option value="mile" <%= from === 'mile' ? 'selected' : '' %>>Mile</option>
+      </select>
+
+      <span>to</span>
+
+      <select name="to" required>
+        <option value="millimeter" <%= to === 'millimeter' ? 'selected' : '' %>>Millimeter</option>
+        <option value="centimeter" <%= to === 'centimeter' ? 'selected' : '' %>>Centimeter</option>
+        <option value="meter" <%= to === 'meter' ? 'selected' : '' %>>Meter</option>
+        <option value="kilometer" <%= to === 'kilometer' ? 'selected' : '' %>>Kilometer</option>
+        <option value="inch" <%= to === 'inch' ? 'selected' : '' %>>Inch</option>
+        <option value="foot" <%= to === 'foot' ? 'selected' : '' %>>Foot</option>
+        <option value="yard" <%= to === 'yard' ? 'selected' : '' %>>Yard</option>
+        <option value="mile" <%= to === 'mile' ? 'selected' : '' %>>Mile</option>
+      </select>
+
+      <button type="submit">Convert</button>
+    </form>
+
+    <% if (result !== null) { %>
+      <h2><%= result %></h2>
+    <% } %>
+  </body>
+</html>
