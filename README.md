@@ -1,26 +1,34 @@
-Unit Converter
+# 🌡️ Unit Converter
 
 A simple and efficient **Unit Converter** web app built with **Node.js**, **Express**, and **HTML/CSS/JavaScript**.  
 It allows users to easily convert between various units — including **temperature**, **length**, **weight**, and **volume**.
 
+---
 
-Features
+## 🔗 Project URL
 
-- Convert between multiple unit types:
+🔹 **GitHub Repository:** [https://github.com/Gideon-18/Unit-Converter](https://github.com/Gideon-18/Unit-Converter)
+
+---
+
+## 🚀 Features
+
+- 🔁 Convert between multiple unit types:
   - Temperature (Celsius ⇄ Fahrenheit ⇄ Kelvin)
   - Length (Meters ⇄ Kilometers ⇄ Miles ⇄ Feet)
   - Weight (Kilograms ⇄ Pounds ⇄ Grams)
   - Volume (Liters ⇄ Milliliters ⇄ Gallons)
-- Real-time conversions
-- Clean and modular backend logic
-- Simple, user-friendly frontend interface
+- ⚡ Real-time conversions
+- 🧠 Clean and modular backend logic
+- 💻 Simple, user-friendly frontend interface
 
+---
 
-Technologies Used
+## 🛠️ Technologies Used
 
-Node.js** (Runtime)
-Express.js** (Server Framework)
-HTML5, CSS3, JavaScript (Frontend)
+- **Node.js** (Runtime)
+- **Express.js** (Server Framework)
+- **HTML5**, **CSS3**, **JavaScript** (Frontend)
 
 ---
 
